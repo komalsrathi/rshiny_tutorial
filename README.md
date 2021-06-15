@@ -1,10 +1,10 @@
 
-# Architecture
+# 01. Architecture
 
 Separate `ui.R` and `server.R`:
 
 ```
-architecture
+01-architecture/example-1
 ├── code # all .R scripts go here
 ├── input # input files
 ├── output # output files
@@ -17,9 +17,9 @@ architecture
 ui and server in a single `app.R`:
 
 ```
-architecture
+01-architecture/example-2
 ├── app.R # combines ui and server in one script
-└── ... # same as above
+└── ... # add similar directories as shown above
 ```
 
-# Layouts
+# 02. Layouts
