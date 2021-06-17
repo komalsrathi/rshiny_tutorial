@@ -30,11 +30,7 @@ In this section we will talk about how to arrange the shiny components i.e. inpu
 
 The `fluidPage` function is used to create fluid page layouts. A fluid page layout consists of rows which in turn include columns. Rows (`fluidRow`) and Columns (`column`) define how the elements are organized horizontally and vertically. Rows exist for the purpose of making sure their elements appear on the same line. Columns exist for the purpose of defining how much width each element takes within a 12-unit wide grid.
 
-| fluidRow  | col1 | col2 | col3 | col4 | col5 | col6 | col7 | col8 | col9 | col10 | col11 | col12 |
-|-----------|------|------|------|------|------|------|------|------|------|-------|-------|-------|
-| fluidRow1 | Element1    |      Element2      |      Element3                                     |
-| fluidRow2 |      Element1                    |      Elementt2     |      Element3                |
-| fluidRow3 |      Element1                                                                        |
+ ! [fluidRow example] (docs/fluidRow_example.png)
 
 ### Sidebar layout
 
