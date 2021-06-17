@@ -23,3 +23,24 @@ ui and server in a single `app.R`:
 ```
 
 # 02. Layouts
+
+In this section we will talk about how to arrange the shiny components i.e. inputs and outputs. These are the following types of most commonly used layouts: 
+
+### Sidebar layout
+
+This is the most basic layout and is called by the function `sidebarLayout` and has two components: a side bar panel (`sidebarPanel`) which is used to lay out all the input components and a main panel (`mainPanel`) which is used to lay out the output components. There are two parameters to define the size and position:
+- `width`: This is a panel-specific parameter. The combined width of sidebarPanel and mainPanel cannot exceed 12.
+- `position`: This is a sidebarLayout parameter. Allowed values: `left` or `right` 
+
+### Custom layout
+
+Shiny's grid system using combinations of rows (`fluidRow`) & columns (`column`). This layout is used to better organize the inputs and outputs.
+
+### Segmented layout
+
+Using tabs (`tabsetPanel`) or menu items (`navlistPanel`) functions
+
+### Navbarpage layout
+
+### Dashboards
+
