@@ -4,21 +4,19 @@ library(shiny)
 ui <- fluidPage(
   
   # title
-  titlePanel("Hello Shiny!"),
+  titlePanel("Example 1"),
   
   # side bar layout starts
-  # layout encloses panels
+  # layout encloses side bar and main panels
   sidebarLayout(
     
     # side bar panel starts
     sidebarPanel(
       
-      # organize all your input widgets here
-      sliderInput(inputId = "bins",
-                  label = "Number of bins:",
-                  min = 1,
-                  max = 50,
-                  value = 30)
+      # organize all your input elements here
+      # slider input
+      sliderInput(inputId = "bins", label = "Number of bins:",
+                  min = 1, max = 50, value = 30)
       
     ), 
     # side bar panel ends
@@ -26,7 +24,7 @@ ui <- fluidPage(
     # main panel starts 
     mainPanel(
       
-      # put all your output widgets
+      # put all your output elements
       plotOutput(outputId = "distPlot")
       
     ) 
@@ -34,4 +32,4 @@ ui <- fluidPage(
   )
   # side bar layout ends
 )
-# ui ends
+# fluidPage ends

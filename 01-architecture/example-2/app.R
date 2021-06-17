@@ -4,21 +4,19 @@ library(shiny)
 ui <- fluidPage(
   
   # title
-  titlePanel("Hello Shiny!"),
+  titlePanel("Example 1"),
   
   # side bar layout starts
-  # layout encloses panels
+  # layout encloses side bar and main panels
   sidebarLayout(
     
     # side bar panel starts
     sidebarPanel(
       
-      # organize all your input widgets here
-      sliderInput(inputId = "bins",
-                  label = "Number of bins:",
-                  min = 1,
-                  max = 50,
-                  value = 30)
+      # organize all your input elements here
+      # slider input
+      sliderInput(inputId = "bins", label = "Number of bins:",
+                  min = 1, max = 50, value = 30)
       
     ), 
     # side bar panel ends
@@ -26,7 +24,7 @@ ui <- fluidPage(
     # main panel starts 
     mainPanel(
       
-      # put all your output widgets
+      # put all your output elements
       plotOutput(outputId = "distPlot")
       
     ) 
@@ -34,7 +32,7 @@ ui <- fluidPage(
   )
   # side bar layout ends
 )
-# ui ends
+# fluidPage ends
 
 # server contains all logic 
 server <- function(input, output) {
@@ -42,15 +40,15 @@ server <- function(input, output) {
   # renderPlot is used to output plots
   output$distPlot <- renderPlot({
     
-    x    <- faithful$waiting
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
-    
+    # old faithful data
+    x <- faithful$waiting
+    bins <- seq(from = min(x), to = max(x), length.out = input$bins + 1)
     hist(x, breaks = bins, col = "#75AADB", border = "white",
          xlab = "Waiting time to next eruption (in mins)",
          main = "Histogram of waiting times")
     
   })
-  
 }
 
+# create a shiny app object
 shinyApp(ui = ui, server = server)

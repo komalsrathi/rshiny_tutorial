@@ -34,7 +34,7 @@ The `fluidPage` function is used to create fluid page layouts. A fluid page layo
 
 ### 2.1.1 Sidebar layout
 
-This is the most basic layout and is called by the function `sidebarLayout` and has two components: a side bar panel (`sidebarPanel`) which is used to lay out all the input components and a main panel (`mainPanel`) which is used to lay out the output components. There are two parameters to define the size and position:
+This is the most basic layout and is called by the function `sidebarLayout` and has three components: a title panel (`titlePanel`) used to add header or title to the application, side bar panel (`sidebarPanel`) which is used to lay out all the input components and a main panel (`mainPanel`) which is used to lay out the output components. There are two parameters to define the size and position:
 - `width`: This is a panel-specific parameter. The combined width of sidebarPanel and mainPanel cannot exceed 12.
 - `position`: This is a sidebarLayout parameter. Allowed values: `left` or `right` 
 
@@ -51,9 +51,10 @@ This uses Tabsets (`tabsetPanel`) or Navigation Lists (`navlistPanel`) to organi
 This allows for multiple sub-components: each with their own layout for e.g. sidebar, grid, tabsets etc. Here, instead of `fluidPage`, use `navbarPage`.
 
 ## 2.3. Dashboards
+ 
+Dashboards can incorporate various layouts in one application similar to a `navbarPage` but more sophisticated. Shiny dashboards have three components: the header (`dashboardHeader`) used to add header or title to the application, the side bar (`dashboardSidebar`) which is used to lay out all the menu items and sub-items and the body (`dashboardBody`) which is used to lay out all the inputs and outputs using any of the above discussed layouts.
 
-
-# 3. I/O
+# 4. Inputs and Outputs
 
 Some pointers:
 
