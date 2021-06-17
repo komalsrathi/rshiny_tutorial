@@ -26,9 +26,9 @@ ui and server in a single `app.R`:
 
 In this section we will talk about how to arrange the shiny components i.e. inputs and outputs. These are the following types of most commonly used layouts: 
 
-## Fluid layouts
+## Fluid Page
 
-The `fluidPage` function is used to create fluid page layouts. A fluid page layout consists of rows which in turn include columns. Rows (`fluidRow`) and Columns (`column`) define how the elements are organized horizontally and vertically. Rows exist for the purpose of making sure their elements appear on the same line. Columns exist for the purpose of defining how much width each element takes within a 12-unit wide grid.
+The `fluidPage` function is used to create fluid page layouts. A fluid page layout consists of rows which in turn include columns. 
 
  ![fluidRow example](docs/fluidRow_example.png)
 
@@ -40,13 +40,20 @@ This is the most basic layout and is called by the function `sidebarLayout` and 
 
 ### Grid layout
 
-Shiny's grid system using combinations of rows (`fluidRow`) & columns (`column`). This layout is used to better organize the inputs and outputs.
+Shiny's grid system using combinations of rows (`fluidRow`) & columns (`column`). This layout is used to better organize the inputs and outputs. Rows (`fluidRow`) and Columns (`column`) define how the elements are organized horizontally and vertically. Rows exist for the purpose of making sure their elements appear on the same line. Columns exist for the purpose of defining how much width each element takes within a 12-unit wide grid.
 
 ### Segmented layout
 
-Using tabs (`tabsetPanel`) or menu items (`navlistPanel`) functions
+This uses Tabsets (`tabsetPanel`) or Navigation Lists (`navlistPanel`) to organize any kind of layout into discrete sections. Navigation lists can be used when you want to subdivide tabsets into sub-sections.
 
-### Navbarpage layout
+## Navbar Pages
 
-### Dashboards
+This allows for multiple sub-components: each with their own layout for e.g. sidebar, grid, tabsets etc. Here, instead of `fluidPage`, use `navbarPage`.
 
+## Dashboards
+
+
+Some pointers:
+
+1. Use Grid layout for better organization
+1. Use `DT::dataTableOutput`, `DT::renderDataTable` and `DT::datatable` functions for data tables (flexible and customizable)
