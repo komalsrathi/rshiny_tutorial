@@ -26,13 +26,23 @@ ui and server in a single `app.R`:
 
 In this section we will talk about how to arrange the shiny components i.e. inputs and outputs. These are the following types of most commonly used layouts: 
 
+## Fluid layouts
+
+The `fluidPage` function is used to create fluid page layouts. A fluid page layout consists of rows which in turn include columns. Rows (`fluidRow`) and Columns (`column`) define how the elements are organized horizontally and vertically. Rows exist for the purpose of making sure their elements appear on the same line. Columns exist for the purpose of defining how much width each element takes within a 12-unit wide grid.
+
+| fluidRow  | col1 | col2 | col3 | col4 | col5 | col6 | col7 | col8 | col9 | col10 | col11 | col12 |
+|-----------|------|------|------|------|------|------|------|------|------|-------|-------|-------|
+| fluidRow1 | Element1    |      Element2      |      Element3                                     |
+| fluidRow2 |      Element1                    |      Elementt2     |      Element3                |
+| fluidRow3 |      Element1                                                                        |
+
 ### Sidebar layout
 
 This is the most basic layout and is called by the function `sidebarLayout` and has two components: a side bar panel (`sidebarPanel`) which is used to lay out all the input components and a main panel (`mainPanel`) which is used to lay out the output components. There are two parameters to define the size and position:
 - `width`: This is a panel-specific parameter. The combined width of sidebarPanel and mainPanel cannot exceed 12.
 - `position`: This is a sidebarLayout parameter. Allowed values: `left` or `right` 
 
-### Custom layout
+### Grid layout
 
 Shiny's grid system using combinations of rows (`fluidRow`) & columns (`column`). This layout is used to better organize the inputs and outputs.
 
