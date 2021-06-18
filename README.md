@@ -54,7 +54,68 @@ This allows for multiple sub-components: each with their own layout for e.g. sid
  
 Dashboards can incorporate various layouts in one application similar to a `navbarPage` but more sophisticated. Shiny dashboards have three components: the header (`dashboardHeader`) used to add header or title to the application, the side bar (`dashboardSidebar`) which is used to lay out all the menu items and sub-items and the body (`dashboardBody`) which is used to lay out all the inputs and outputs using any of the above discussed layouts.
 
-# 4. Inputs and Outputs
+# 3. Inputs and Outputs
+
+The goal of inputs is to provide a set of parameters that are passed on to a function which executes a set of commands in order to generate an output. In shiny jargon, inputs are called as `reactive sources` and outputs are called as `reactive endpoints`. 
+
+## 3.1. Add inputs and outputs
+
+Different types of input elements and their return values are listed below:
+
++------------------+----------------------------------------------------------------+
+| Single checkbox  | Logical                                                        |
++------------------+----------------------------------------------------------------+
+| Radio buttons    | Character                                                      |
++------------------+----------------------------------------------------------------+
+| Select box       | Character or character vector (if `multiple = TRUE`)           |
++------------------+----------------------------------------------------------------+
+| Numeric input    | Numeric                                                        |
++------------------+----------------------------------------------------------------+
+| Text input       | Character string                                               |
++------------------+----------------------------------------------------------------+
+| Checkbox group   | Character or character vector                                  |
++------------------+----------------------------------------------------------------+
+| Picker input     | Character or character vector (select or deselect all at once) |
++------------------+----------------------------------------------------------------+
+| Selectize input  | Character or character vector (add new elements)               |
++------------------+----------------------------------------------------------------+
+| Slider input     | Numeric                                                        |
++------------------+----------------------------------------------------------------+
+| Slider range     | Numeric vector                                                 |
++------------------+----------------------------------------------------------------+
+| Date input       | Character                                                      |
++------------------+----------------------------------------------------------------+
+| Date range input | Character vector                                               |
++------------------+----------------------------------------------------------------+
+| File input       | Name, size, type and datapath                                  |
++------------------+----------------------------------------------------------------+
+| Action button    | Numeric value (incremental)                                    |
++------------------+----------------------------------------------------------------+
+
+## 3.2. Update outputs
+
+Following are output-specific functions that take information from any number of inputs, perform computations (or call another function) and return either a table, plot, plotly or text object: 
+
+| Output element (UI)       | Function (Server)    |
+|---------------------------|----------------------|
+| DT::dataTableOutput       | DT::renderDataTable  |
+| shiny::plotOutput         | shiny::renderPlot    |
+| plotly::plotlyOutput      | plotly::renderPlotly |
+| shiny::textOutput         | shiny::renderText    |
+| shiny::verbatimTextOutput | shiny::renderPrint   |
+
+## 3.3 File I/O
+
+# 4. 
+
+# 5. 
+
+# 6. Sharing apps
+
+You can share your apps via two methods:
+
+1. shinyapps.io: This is super handy for small applications: https://www.shinyapps.io/
+2. shiny server: The documentation to create one is here: https://github.com/komalsrathi/shiny-server. 
 
 Some pointers:
 

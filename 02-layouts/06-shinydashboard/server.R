@@ -18,13 +18,12 @@ server <- function(input, output) {
   })
   
   # renderText is used to output text
-  output$text2 <- renderText({
+  output$text1 <- renderText({
     "Below is the rawdata:"
   })
   
   # DT::renderTable is used to output table
   output$table1 <- DT::renderDataTable({
-    # DT::datatable has many options to customize a table
     DT::datatable(faithful, options = list(pageLength = 5))
   })
   
