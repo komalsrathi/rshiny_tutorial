@@ -58,9 +58,9 @@ Dashboards can incorporate various layouts in one application similar to a `navb
 
 The goal of inputs is to provide a set of parameters that are passed on to a function which executes a set of commands in order to generate an output. In shiny jargon, inputs are called as `reactive sources` and outputs are called as `reactive endpoints`. 
 
-## 3.1. Add inputs and outputs
+## 3.1. Inputs:
 
-Different types of input elements and their return values are listed below:
+Different types of input widgets and their return values are listed below:
 
 | Input            | Return value                                                   |
 |------------------|----------------------------------------------------------------|
@@ -71,7 +71,7 @@ Different types of input elements and their return values are listed below:
 | Text input       | Character string                                               |
 | Checkbox group   | Character or character vector                                  |
 | Picker input     | Character or character vector (select or deselect all at once) |
-| Selectize input  | Character or character vector (add new elements)               |
+| Selectize input  | Character or character vector (add new variable)               |
 | Slider input     | Numeric                                                        |
 | Slider range     | Numeric vector                                                 |
 | Date input       | Character                                                      |
@@ -79,9 +79,9 @@ Different types of input elements and their return values are listed below:
 | File input       | Name, size, type and datapath                                  |
 | Action button    | Numeric value (incremental)                                    |
 
-## 3.2. Update outputs
+## 3.2 Outputs:
 
-Following are output-specific functions that take information from any number of inputs, perform computations (or call another function) and return either a table, plot, plotly or text object: 
+Following are some output elements and corresponding output-specific functions that take information from various inputs, perform computations (or call another function) and return either a table, plot, plotly or text object to be sent to the output elements: 
 
 | Output element (UI)       | Function (Server)    |
 |---------------------------|----------------------|
@@ -91,11 +91,27 @@ Following are output-specific functions that take information from any number of
 | shiny::textOutput         | shiny::renderText    |
 | shiny::verbatimTextOutput | shiny::renderPrint   |
 
-## 3.3 File I/O
+## 3.3. Update inputs and outputs
 
-# 4. 
+You may want to either update an input or an output element and for that you must understand the following functions:
 
-# 5. 
+1. `reactive`: The reactive function allows a user to monitor the status of an input or other changing variable and *return the value* to be used elsewhere in the code. Reactive expressions use lazy evaluation; that is, when their dependencies change, they *don't re-execute right away* but rather wait until they are called by someone else.
+
+Use case: In most cases, you would use reactive to listen to other dependencies and *return a variable* that can be used by other functions in your code.
+
+2. `eventReactive`: Similar to above but when you want to create a variable with a defined trigger instead of when the function is called. 
+
+3. `observe`: Observe is similar reactive, the main difference is that it *does not return* any values to any other environment besides its own, and it is not lazy. The observe function continually monitors any changes in all reactive values within its environment and runs the code in it's environment when these values are changed. 
+
+Use case: In most cases, you would use observe to observe other dependencies and instantaneously update other input values. 
+
+4. `observeEvent`: Similar to `observe` but continually monitor ONE defined reactive variable/event (the trigger) and run the code when the the trigger is activated by change/input of that trigger.
+
+Use case: Most commonly used to watch input to buttons, as that is a defined event in which you want things to happen after the button is pushed.
+
+# 4. Use R scripts in shiny
+
+# 5. Rmarkdown with shiny
 
 # 6. Sharing apps
 
