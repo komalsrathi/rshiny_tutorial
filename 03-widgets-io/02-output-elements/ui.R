@@ -17,12 +17,21 @@ ui <- fluidPage(
                textOutput(outputId = "text_output"),
              )
     ),
-    tabPanel(title = "Table",
+    tabPanel(title = "Shiny Table",
              sidebarPanel(
                selectInput(inputId = "select_input_table", label = "Datasets", choices = c("iris", "mtcars", "mpg"), multiple = F)
              ),
-             mainPanel(
-               DT::dataTableOutput(outputId = "table_output")
+             mainPanel(width = 20, 
+                       tableOutput(outputId = "table_output")
+             )
+    ),
+    tabPanel(title = "DT Table",
+             sidebarPanel(
+               uiOutput("dt_link"), br(),
+               selectInput(inputId = "select_input_dt_table", label = "Datasets", choices = c("iris", "mtcars", "mpg"), multiple = F)
+             ),
+             mainPanel(width = 20, 
+               DT::dataTableOutput(outputId = "dt_table_output")
              )
     ),
     tabPanel(title = "Plot",

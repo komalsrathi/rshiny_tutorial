@@ -4,7 +4,7 @@ library(shiny)
 ui <- fluidPage(
   
   # title
-  titlePanel("Example 1"),
+  titlePanel("Using single app.R"),
   
   # side bar layout starts
   # layout encloses side bar and main panels

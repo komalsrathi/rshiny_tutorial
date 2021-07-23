@@ -4,6 +4,7 @@
 library(ggplot2)
 library(DT)
 library(plotly)
+
 server <- function(input, output) {
   
   # renderText is used to output text
@@ -11,10 +12,25 @@ server <- function(input, output) {
     input$text_input
   })
   
-  # DT::renderTable is used to output table
-  output$table_output <- DT::renderDataTable({
+  # renderTable is used to output table
+  output$table_output <- renderTable({
     dat <- get(input$select_input_table)
-    DT::datatable(dat, options = list(pageLength = 5))
+    dat
+  })
+  
+  # renderUI is used to output hyperlinks
+  url <- a("DT: An R interface to the DataTables library", href="https://rstudio.github.io/DT/", target="_blank")
+  output$dt_link <- renderUI({
+    tagList("URL link:", url)
+  })
+  
+  # DT::renderTable is used to output data-table
+  output$dt_table_output <- DT::renderDataTable({
+    dat <- get(input$select_input_dt_table)
+    DT::datatable(dat, 
+                  options = list(pageLength = 5), 
+                  filter = "bottom",
+                  class = 'cell-border stripe')
   })
   
   # renderPlot is used to output plots
