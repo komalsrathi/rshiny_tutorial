@@ -123,4 +123,4 @@ You can share your apps via two methods:
 Some pointers:
 
 1. Use Grid layout for better organization
-1. Use `DT::dataTableOutput`, `DT::renderDataTable` and `DT::datatable` functions for data tables (flexible and customizable)
+1. Use `DT::dataTableOutput`, `DT::renderDataTable` and `DT::datatable` functions for data tables (flexible and customizable): https://rstudio.github.io/DT/
