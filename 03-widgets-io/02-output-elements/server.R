@@ -14,8 +14,7 @@ server <- function(input, output) {
   
   # renderTable is used to output table
   output$table_output <- renderTable({
-    dat <- get(input$select_input_table)
-    dat
+    get(input$select_input_table)
   })
   
   # renderUI is used to output hyperlinks
@@ -26,11 +25,13 @@ server <- function(input, output) {
   
   # DT::renderTable is used to output data-table
   output$dt_table_output <- DT::renderDataTable({
+    
     dat <- get(input$select_input_dt_table)
     DT::datatable(dat, 
                   options = list(pageLength = 5), 
                   filter = "bottom",
                   class = 'cell-border stripe')
+    
   })
   
   # renderPlot is used to output plots
@@ -46,6 +47,7 @@ server <- function(input, output) {
   
   # renderPlotly is used to output interactive plots
   output$plotly_output <- plotly::renderPlotly({
+    
     # predefining x and y based on the dataset chosen
     if(input$select_input_plotly == "iris"){
       x <- 'Sepal.Length'
@@ -57,11 +59,13 @@ server <- function(input, output) {
       x <- 'year'
       y <- 'cyl'
     }
+    
     # plot using ggplot
     dat <- get(input$select_input_plotly)
     p <- ggplot(dat, aes_string(x = x, y = y)) +
       geom_point(pch = 21, size = 4, color = "navy", alpha = 0.5) +
       theme_bw()
     return(p)
+    
   })
 }
