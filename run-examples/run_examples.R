@@ -1,5 +1,5 @@
 # root directory of your project
-root_dir <- file.path("/Users/rathik/Projects/rshiny_tutorial")
+root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
 
 # 01-architecture
 runApp(appDir = file.path(root_dir, "01-architecture", "01-ui-server-scripts"), display.mode = "showcase")
