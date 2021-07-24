@@ -18,13 +18,11 @@ runApp(appDir = file.path(root_dir, "03-widgets-io", "01-input-widgets"), displa
 runApp(appDir = file.path(root_dir, "03-widgets-io", "02-output-elements"), display.mode = "showcase")
 runApp(appDir = file.path(root_dir, "03-widgets-io", "03-update-io"), display.mode = "showcase")
 
-# 04-add-scripts
-# function for fancy datatable
-# function to plot correlation using two input variables and return two objects
+# 04-add-scripts (sunday)
+# 1. function for fancy datatable
+# 2. function to plot correlation using two input variables and return two objects
 
-# 05-rmarkdown-shiny
+# 05-rmarkdown-shiny (sunday)
 
-# other topics: 
-# creating a shiny server
-# publishing or deploying your app on an internal server or shinyapps.io
+# sunday - walk through and clean up
 
