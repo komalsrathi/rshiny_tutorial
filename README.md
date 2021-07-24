@@ -123,4 +123,5 @@ You can share your apps via two methods:
 Some pointers:
 
 1. Use Grid layout for better organization
-1. Use `DT::dataTableOutput`, `DT::renderDataTable` and `DT::datatable` functions for data tables (flexible and customizable): https://rstudio.github.io/DT/
+2. Use `DT::dataTableOutput`, `DT::renderDataTable` and `DT::datatable` functions for data tables (flexible and customizable): https://rstudio.github.io/DT/
+3. Good resource for section 3.3: https://riptutorial.com/shiny/topic/10787/reactive--reactivevalue-and-eventreactive--observe-and-observeevent-in-shiny
