@@ -16,11 +16,11 @@ runApp(appDir = file.path(root_dir, "02-layouts", "06-shinydashboard"), display.
 # 03-widgets-io
 runApp(appDir = file.path(root_dir, "03-widgets-io", "01-input-widgets"), display.mode = "showcase")
 runApp(appDir = file.path(root_dir, "03-widgets-io", "02-output-elements"), display.mode = "showcase")
-runApp(appDir = file.path(root_dir, "03-widgets-io", "03-update-io"), display.mode = "showcase")
+runApp(appDir = file.path(root_dir, "03-widgets-io", "03-update-inputs"), display.mode = "showcase")
+runApp(appDir = file.path(root_dir, "03-widgets-io", "03-update-outputs"), display.mode = "showcase")
 
-# 04-add-scripts (sunday)
-# 1. function for fancy datatable
-# 2. function to plot correlation using two input variables and return two objects
+# 04-add-scripts
+runApp(appDir = file.path(root_dir, "04-add-scripts"), display.mode = "showcase")
 
 # 05-rmarkdown-shiny (sunday)
 
