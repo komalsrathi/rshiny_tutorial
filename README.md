@@ -111,7 +111,11 @@ Use case: Most commonly used to watch input to buttons, as that is a defined eve
 
 # 4. Use R scripts in shiny
 
+Integrating R scripts in shiny is very simple: you can encapsulate your code as functions that are are sourced and called within the server.R script. One thing to note is all your R code/scripts must go in the `R` folder.
+
 # 5. Rmarkdown with shiny
+
+This is another quick way to add ui elements to a markdown instead of creating a full blown application. 
 
 # 6. Sharing apps
 
