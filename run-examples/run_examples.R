@@ -15,14 +15,13 @@ runApp(appDir = file.path(root_dir, "02-layouts", "06-shinydashboard"), display.
 
 # 03-widgets-io
 runApp(appDir = file.path(root_dir, "03-widgets-io", "01-input-widgets"), display.mode = "showcase")
-runApp(appDir = file.path(root_dir, "03-widgets-io", "02-output-elements"), display.mode = "showcase")
-runApp(appDir = file.path(root_dir, "03-widgets-io", "03-update-inputs"), display.mode = "showcase")
-runApp(appDir = file.path(root_dir, "03-widgets-io", "03-update-outputs"), display.mode = "showcase")
+runApp(appDir = file.path(root_dir, "03-widgets-io", "02-update-inputs"), display.mode = "showcase")
+runApp(appDir = file.path(root_dir, "03-widgets-io", "03-output-elements"), display.mode = "showcase")
+runApp(appDir = file.path(root_dir, "03-widgets-io", "04-update-outputs"), display.mode = "showcase")
 
 # 04-add-scripts
 runApp(appDir = file.path(root_dir, "04-add-scripts"), display.mode = "showcase")
 
-# 05-rmarkdown-shiny (sunday)
-
-# sunday - walk through and clean up
+# 05-rmarkdown-shiny
+runApp(appDir = file.path(root_dir, "06-rmarkdown_shiny"), display.mode = "showcase")
 
