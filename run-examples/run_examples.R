@@ -23,5 +23,8 @@ runApp(appDir = file.path(root_dir, "03-widgets-io", "04-update-outputs"), displ
 runApp(appDir = file.path(root_dir, "04-add-scripts"), display.mode = "showcase")
 
 # 05-rmarkdown-shiny
-runApp(appDir = file.path(root_dir, "06-rmarkdown_shiny"), display.mode = "showcase")
+rmarkdown::run(file =  file.path(root_dir, "05-rmarkdown-shiny", "01-shiny-markdown.Rmd"))
+
+# 06-flexdashboard
+rmarkdown::run(file =  file.path(root_dir, "06-flexdashboard", "06-flexdashboard.Rmd"))
 

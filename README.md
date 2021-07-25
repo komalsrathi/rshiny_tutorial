@@ -113,19 +113,25 @@ Use case: Most commonly used to watch input to buttons, as that is a defined eve
 
 Integrating R scripts in shiny is very simple: you can encapsulate your code as functions that are are sourced and called within the server.R script. One thing to note is all your R code/scripts must go in the `R` folder.
 
-# 5. Rmarkdown with shiny
+# 5. Rmarkdown + shiny
 
 This is another quick way to add ui elements to a markdown instead of creating a full blown application. 
 
-# 6. Sharing apps
+# 6. Flexdashboard + shiny
 
-You can share your apps via two methods:
+Flexdashboard allows creating interactive documents by integrating shiny elements, organizing them into menus, tabs, columns and rows. Recommended over Rmarkdown. 
+
+# 7. Sharing apps
+
+You can share your apps via three methods:
 
 1. shinyapps.io: This is super handy for small applications: https://www.shinyapps.io/
 2. shiny server: The documentation to create one is here: https://github.com/komalsrathi/shiny-server. 
+3. R package `rsconnect`: https://github.com/rstudio/rsconnect 
 
 Some pointers:
 
 1. Use Grid layout for better organization
 2. Use `DT::dataTableOutput`, `DT::renderDataTable` and `DT::datatable` functions for data tables (flexible and customizable): https://rstudio.github.io/DT/
 3. Good resource for section 3.3: https://riptutorial.com/shiny/topic/10787/reactive--reactivevalue-and-eventreactive--observe-and-observeevent-in-shiny
+4. Flexdashboard intro: https://pkgs.rstudio.com/flexdashboard

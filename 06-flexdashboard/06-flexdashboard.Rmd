@@ -1,0 +1,94 @@
+---
+title: "Integrating flexdashboard and shiny"
+output:
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    social: menu
+    source_code: embed
+runtime: shiny
+---
+
+```{r include = FALSE}
+knitr::opts_chunk$set(comment = NA)
+getOption(x = 'DT.warn.size', default = FALSE)
+```
+
+```{r load_libs}
+library(rmarkdown)
+library(shiny)
+library(plotly)
+library(DT)
+```
+
+```{r source_funcs}
+root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
+# custom data table
+source(file.path(root_dir, "06-flexdashboard", "R", "custom_table.R"))
+# plot theme
+source(file.path(root_dir, "06-flexdashboard", "R", "plot_theme.R"))
+```
+
+Menu_item_1
+=======================================================================
+
+Inputs {.sidebar}
+-----------------------------------------------------------------------
+
+```{r}
+shiny::selectInput(inputId = "select_input", 
+            label = "Datasets", 
+            choices = c("iris", "mtcars", "mpg"), multiple = F)
+```
+
+
+Row {data-height=100}
+-----------------------------------------------------------------------
+
+```{r}
+h4("Just some intro text")
+```
+
+Row {.tabset}
+-----------------------------------------------------------------------
+
+### Table
+```{r}
+DT::renderDataTable({
+  
+  dat <- get(input$select_input)
+  custom_table(dat, pageLength = 10)
+  
+})
+```
+
+### Plot
+```{r plot_output}
+plotly::renderPlotly({
+  # predefining x and y based on the dataset chosen
+  if(input$select_input == "iris"){
+    x <- 'Sepal.Length'
+    y <- 'Sepal.Width'
+  } else if(input$select_input == "mtcars"){
+    x <- 'mpg'
+    y <- 'cyl'
+  } else if(input$select_input == "mpg"){
+    x <- 'year'
+    y <- 'cyl'
+  }
+  
+  # plot using ggplot
+  dat <- get(input$select_input)
+  p <- ggplot(dat, aes_string(x = x, y = y)) +
+    geom_point(pch = 21, size = 4, color = "navy", alpha = 0.5) +
+    theme_bw() +
+    theme_publication()
+  return(p)
+})
+```
+
+Menu_item_2
+=======================================================================
+
+Menu_item_3
+=======================================================================
+
