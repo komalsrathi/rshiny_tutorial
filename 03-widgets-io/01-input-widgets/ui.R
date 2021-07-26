@@ -35,7 +35,7 @@ fluidPage(
     column(4,
            wellPanel(
              radioButtons("radio", label = h3("Radio buttons"),
-                          choices = list("Choice 1" = 1, "Choice 2" = 2, "Choice 3" = 3), 
+                          choices = list("Choice 1" = 1, "Choice 2" = 2, "Choice 3"), 
                           selected = 1),
              hr(),
              p("Current Values:", style = "color:#888888;"), 
@@ -45,7 +45,7 @@ fluidPage(
            wellPanel(
              selectInput("select", label = h3("Select box"), 
                          choices = list("Choice 1" = 1, "Choice 2" = 2,
-                                        "Choice 3" = 3), selected = 1),
+                                        "Choice 3"), selected = "Choice 3"),
              hr(),
              p("Current Value:", style = "color:#888888;"), 
              verbatimTextOutput("selectOut")
