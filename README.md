@@ -5,9 +5,9 @@ Separate `ui.R` and `server.R`:
 
 ```
 01-architecture/01-ui-server-scripts
-├── code # all .R scripts go here
+├── code # all .R scripts go here (this can be also named as R)
 ├── input # input files (you can also name this as data etc)
-├── output # output files (this could also be results, plots etc)
+├── output # output files (this could also be results or plots)
 ├── server.R # update outputs using some input variable or by calling functions
 ├── ui.R # define layout, input and output elements
 ├── www # files like .css, .js, .png

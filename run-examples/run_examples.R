@@ -1,5 +1,9 @@
+library(shiny)
+
 # root directory of your project
 root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
+
+# shiny::runApp is used to run a shiny application
 
 # 01-architecture
 runApp(appDir = file.path(root_dir, "01-architecture", "01-ui-server-scripts"), display.mode = "showcase")
