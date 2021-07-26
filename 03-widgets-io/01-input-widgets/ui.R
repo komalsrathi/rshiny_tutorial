@@ -1,6 +1,6 @@
 library(shiny)
 library(shinyWidgets)
-fluidPage(
+ui <- fluidPage(
   
   tags$head(tags$style(HTML("
     .shiny-text-output {

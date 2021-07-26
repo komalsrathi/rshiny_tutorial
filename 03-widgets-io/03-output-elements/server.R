@@ -1,11 +1,11 @@
-# server contains all logic 
-# reads information from input objects (using the inputIds)
-# and provides ouput to the output objects (using the outputIds)
 library(ggplot2)
 library(DT)
 library(plotly)
 
-server <- function(input, output) {
+server <- function(input, output, session){
+  
+  # Note: each output element has a corresponding function with a "render" prefix
+  # that can be used to update the element
   
   # renderText is used to output text
   output$text_output <- renderText({

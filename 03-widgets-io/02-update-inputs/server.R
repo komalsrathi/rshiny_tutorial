@@ -1,4 +1,7 @@
-shinyServer(function(input, output, session){
+server <- function(input, output, session){
+  
+  # Note: each input element has a corresponding function with an "update" prefix
+  # that can be used to update the element
   
   # update checkboxGroupInput based on user selection
   observe({
@@ -29,4 +32,4 @@ shinyServer(function(input, output, session){
     
   })
   
-})
+}

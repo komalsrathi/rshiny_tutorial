@@ -1,4 +1,4 @@
-function(input, output) {
+server <- function(input, output, session){
   
   output$checkboxOut <- renderPrint({ input$checkbox })
   output$radioOut <- renderPrint({ input$radio })
