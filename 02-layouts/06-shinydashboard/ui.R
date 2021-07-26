@@ -17,7 +17,7 @@ dashboardPage(
                    sidebarMenu(
                      menuItem("Analysis1", icon = icon("dashboard"), tabName = "analysis1"),
                      menuItem("Analysis2", icon = icon("dashboard"), tabName = "analysis2"),
-                     menuItem("Analysis2", icon = icon("dashboard"), tabName = "analysis3")
+                     menuItem("Analysis3", icon = icon("dashboard"), tabName = "analysis3")
                    ) 
                    # sidebarMenu ends
   ), 
@@ -49,7 +49,7 @@ dashboardPage(
               # tabsetPanel for outputs
               tabsetPanel(
                 tabPanel(title = "Histogram",
-                         plotOutput(outputId = "distPlot")),
+                         plotOutput(outputId = "distPlot", width = "100%")),
                 tabPanel(title = "Table",
                          DT::dataTableOutput(outputId = "table1")),
                 tabPanel(title = "Scatter",
