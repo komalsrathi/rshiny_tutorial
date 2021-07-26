@@ -6,8 +6,8 @@ runApp(appDir = file.path(root_dir, "01-architecture", "01-ui-server-scripts"), 
 runApp(appDir = file.path(root_dir, "01-architecture", "02-app-script"), display.mode = "showcase")
 
 # 02-layouts
-runApp(appDir = file.path(root_dir, "02-layouts", "01-sidebar_layout"), display.mode = "showcase")
-runApp(appDir = file.path(root_dir, "02-layouts", "02-grid_layout"), display.mode = "showcase")
+runApp(appDir = file.path(root_dir, "02-layouts", "01-grid_layout"), display.mode = "showcase")
+runApp(appDir = file.path(root_dir, "02-layouts", "02-sidebar_layout"), display.mode = "showcase")
 runApp(appDir = file.path(root_dir, "02-layouts", "03-segmented_navlists_layout"), display.mode = "showcase")
 runApp(appDir = file.path(root_dir, "02-layouts", "04-segmented_tabs_layout"), display.mode = "showcase")
 runApp(appDir = file.path(root_dir, "02-layouts", "05-navbarpage"), display.mode = "showcase")

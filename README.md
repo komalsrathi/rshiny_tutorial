@@ -4,10 +4,10 @@
 Separate `ui.R` and `server.R`:
 
 ```
-01-architecture/example-1
+01-architecture/01-ui-server-scripts
 ├── code # all .R scripts go here
-├── input # input files
-├── output # output files
+├── input # input files (you can also name this as data etc)
+├── output # output files (this could also be results, plots etc)
 ├── server.R # update outputs using some input variable or by calling functions
 ├── ui.R # define layout, input and output elements
 ├── www # files like .css, .js, .png
@@ -17,7 +17,7 @@ Separate `ui.R` and `server.R`:
 ui and server in a single `app.R`:
 
 ```
-01-architecture/example-2
+01-architecture/02-app-script
 ├── app.R # combines ui and server in one script
 └── ... # add similar directories as shown above
 ```
@@ -32,15 +32,15 @@ The `fluidPage` function is used to create fluid page layouts. A fluid page layo
 
  ![fluidRow example](docs/fluidRow_example.png)
 
-### 2.1.1 Sidebar layout
+### 2.1.1 Grid layout
+
+Shiny's grid system using combinations of rows (`fluidRow`) & columns (`column`). This layout is used to better organize the inputs and outputs. Rows (`fluidRow`) and Columns (`column`) define how the elements are organized horizontally and vertically. Rows exist for the purpose of making sure their elements appear on the same line. Columns exist for the purpose of defining how much width each element takes within a 12-unit wide grid.
+
+### 2.1.2 Sidebar layout
 
 This is the most basic layout and is called by the function `sidebarLayout` and has three components: a title panel (`titlePanel`) used to add header or title to the application, side bar panel (`sidebarPanel`) which is used to lay out all the input components and a main panel (`mainPanel`) which is used to lay out the output components. There are two parameters to define the size and position:
 - `width`: This is a panel-specific parameter. The combined width of sidebarPanel and mainPanel cannot exceed 12.
 - `position`: This is a sidebarLayout parameter. Allowed values: `left` or `right` 
-
-### 2.1.2 Grid layout
-
-Shiny's grid system using combinations of rows (`fluidRow`) & columns (`column`). This layout is used to better organize the inputs and outputs. Rows (`fluidRow`) and Columns (`column`) define how the elements are organized horizontally and vertically. Rows exist for the purpose of making sure their elements appear on the same line. Columns exist for the purpose of defining how much width each element takes within a 12-unit wide grid.
 
 ### 2.1.3 Segmented layout
 
